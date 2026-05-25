@@ -432,15 +432,24 @@
       .hero .label { font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
       .names { font-size: clamp(38px, 12.2vw, 82px); line-height: 1.18; white-space: nowrap; }
       .lead { font-size: 17px; }
-      .hero-photo { aspect-ratio: 1201 / 1800; border-radius: 22px; }
-      .hero-photo img { object-position: 49% 42%; }
+      .hero-photo {
+        aspect-ratio: auto;
+        border-radius: 22px;
+        overflow: hidden;
+      }
+      .hero-photo img {
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
       .hero-date-card {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
+        position: static;
         width: auto;
-        padding: 20px 22px;
-        border-radius: 20px;
+        padding: 20px 22px 22px;
+        border-radius: 0;
+        background: var(--light);
+        box-shadow: none;
+        backdrop-filter: none;
       }
       .hero-date-card strong { font-size: 24px; }
       .hero-date-card span { font-size: 15px; }
