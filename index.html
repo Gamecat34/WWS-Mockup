@@ -428,23 +428,39 @@
       .nav { min-height: 58px; }
       .brand { font-size: 13px; letter-spacing: .09em; }
       .nav-links a:not(.button), .nav-links .button { display: none; }
-      .hero { padding-top: 82px; }
+      .hero { padding: 82px 12px 56px; }
+      .hero-inner { gap: 28px; }
       .hero .label { font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
       .names { font-size: clamp(38px, 12.2vw, 82px); line-height: 1.18; white-space: nowrap; }
       .lead { font-size: 17px; }
+
+      /* Mobile must not overlay the date card. The image and the text box are two real rows. */
       .hero-photo {
-        aspect-ratio: auto;
+        display: grid;
+        grid-template-rows: auto auto;
+        width: 100%;
+        aspect-ratio: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
         border-radius: 22px;
         overflow: hidden;
       }
       .hero-photo img {
-        height: auto;
-        object-fit: contain;
+        display: block;
+        width: 100%;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
         object-position: center;
       }
       .hero-date-card {
-        position: static;
-        width: auto;
+        position: relative !important;
+        inset: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        max-width: none;
         padding: 20px 22px 22px;
         border-radius: 0;
         background: var(--light);
