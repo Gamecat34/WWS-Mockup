@@ -165,6 +165,8 @@
     .hero-label {
       position: relative;
       z-index: 2;
+      top: -14px;
+      margin-bottom: clamp(30px, 3.4vw, 42px);
     }
 
     .names {
@@ -442,13 +444,13 @@
       .hero-inner { gap: 28px; }
       .hero .label { font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
       .hero-label {
-        top: -18px;
+        top: -14px;
         margin-bottom: 56px;
       }
       .names {
-        width: calc(100vw - 24px);
+        width: calc(100vw - 44px);
         max-width: none;
-        font-size: clamp(58px, 17vw, 96px);
+        font-size: clamp(54px, 15.6vw, 90px);
         line-height: 1.06;
         white-space: nowrap;
         letter-spacing: 0;
@@ -456,12 +458,13 @@
 
       @media (max-width: 420px) {
         .hero-label {
-          top: -20px;
+          top: -14px;
           margin-bottom: 62px;
         }
 
         .names {
-          font-size: clamp(56px, 18.2vw, 82px);
+          width: calc(100vw - 52px);
+          font-size: clamp(50px, 15.2vw, 76px);
         }
       }
       .lead { font-size: 17px; }
