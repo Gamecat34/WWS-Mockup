@@ -30,6 +30,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: var(--sans);
@@ -73,7 +74,12 @@
       white-space: nowrap;
     }
 
-    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
     .nav-links a:not(.button) {
       font-size: 11px;
       font-weight: 500;
@@ -122,13 +128,25 @@
       line-height: .78;
       font-weight: 400;
       margin: 0 0 20px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .script-small {
+      font-family: var(--script);
+      font-size: clamp(42px, 5.6vw, 72px);
+      line-height: .9;
+      font-weight: 400;
+      margin: 0 0 18px;
+      text-transform: none;
+      letter-spacing: 0;
     }
 
     h1, h2, h3 {
       font-family: var(--serif);
       font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: .12em;
+      letter-spacing: .09em;
       line-height: 1.08;
       margin: 0;
     }
@@ -177,7 +195,7 @@
       margin-bottom: 22px;
       font-size: clamp(21px, 2.4vw, 34px);
       text-transform: none;
-      letter-spacing: .08em;
+      letter-spacing: .07em;
     }
 
     .lead {
@@ -187,7 +205,12 @@
       font-size: clamp(18px, 2vw, 21px);
     }
 
-    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
 
     .photo-card {
       overflow: hidden;
@@ -205,13 +228,15 @@
       border-radius: 32px;
     }
 
-    .hero-photo img { object-position: 50% 42%; }
+    .hero-photo img {
+      object-position: 50% 42%;
+    }
 
     .hero-date-card {
       position: absolute;
       left: clamp(18px, 3vw, 34px);
       bottom: clamp(18px, 3vw, 34px);
-      width: min(380px, calc(100% - 36px));
+      width: min(410px, calc(100% - 36px));
       padding: clamp(24px, 3vw, 34px);
       border-radius: 24px;
       background: rgba(255,253,247,.94);
@@ -219,29 +244,25 @@
       backdrop-filter: blur(10px);
     }
 
-    .hero-date-card .label {
-      margin-bottom: 14px;
-      font-size: 11px;
-      letter-spacing: .19em;
-      color: rgba(31,27,22,.62);
+    .date-block {
+      display: grid;
+      gap: 10px;
     }
 
-    .hero-date-card strong {
-      display: block;
-      margin-bottom: 14px;
+    .date-main {
       font-family: var(--serif);
-      font-size: clamp(25px, 3.2vw, 34px);
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.08;
       font-weight: 400;
-      line-height: 1.12;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
     }
 
-    .hero-date-card span {
-      display: block;
+    .date-sub {
+      margin-top: 4px;
+      font-size: 16px;
+      line-height: 1.45;
       color: var(--muted);
-      font-size: 17px;
-      line-height: 1.55;
     }
 
     .info-strip {
@@ -259,9 +280,20 @@
       gap: 28px;
     }
 
-    .info-strip .label { color: rgba(255,253,247,.62); }
-    .info-strip h2 { margin-bottom: 10px; font-size: clamp(22px, 3vw, 36px); }
-    .info-strip p:not(.label) { max-width: 720px; color: rgba(255,253,247,.74); font-size: 17px; }
+    .info-strip .label {
+      color: rgba(255,253,247,.62);
+    }
+
+    .info-strip h2 {
+      margin-bottom: 10px;
+      font-size: clamp(22px, 3vw, 36px);
+    }
+
+    .info-strip p:not(.label) {
+      max-width: 720px;
+      color: rgba(255,253,247,.74);
+      font-size: 17px;
+    }
 
     .section {
       padding: clamp(76px, 9vw, 132px) clamp(16px, 4vw, 32px);
@@ -276,10 +308,23 @@
       align-items: center;
     }
 
-    .split.reverse { grid-template-columns: .94fr 1.06fr; }
-    .copy { max-width: 500px; }
-    .copy h2 { margin-bottom: 20px; font-size: clamp(26px, 3.4vw, 46px); }
-    .copy p:not(.label) { color: var(--muted); font-size: 18px; }
+    .split.reverse {
+      grid-template-columns: .94fr 1.06fr;
+    }
+
+    .copy {
+      max-width: 540px;
+    }
+
+    .copy h2 {
+      margin-bottom: 20px;
+      font-size: clamp(26px, 3.4vw, 46px);
+    }
+
+    .copy p:not(.label) {
+      color: var(--muted);
+      font-size: 18px;
+    }
 
     .tall-photo { aspect-ratio: 1184 / 1800; }
     .wide-photo { aspect-ratio: 1800 / 1175; }
@@ -302,9 +347,19 @@
       align-items: start;
     }
 
-    .details h2 { margin-bottom: 18px; font-size: clamp(26px, 3.2vw, 42px); }
-    .details-intro { color: var(--muted); font-size: 18px; }
-    .timeline { border-top: 1px solid var(--line); }
+    .details h2 {
+      margin-bottom: 18px;
+      font-size: clamp(26px, 3.2vw, 42px);
+    }
+
+    .details-intro {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .timeline {
+      border-top: 1px solid var(--line);
+    }
 
     .detail {
       display: grid;
@@ -330,7 +385,9 @@
       font-weight: 500;
     }
 
-    .detail p { color: var(--muted); }
+    .detail p {
+      color: var(--muted);
+    }
 
     .cards {
       padding: clamp(66px, 8vw, 104px) clamp(16px, 4vw, 32px);
@@ -353,8 +410,20 @@
       background: rgba(255,253,247,.78);
     }
 
-    .card h3 { margin-bottom: 14px; font-size: 14px; }
-    .card p { color: var(--muted); font-size: 17px; }
+    .card .script-small {
+      font-size: clamp(34px, 4.4vw, 54px);
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 17px;
+    }
 
     .final-photo-section {
       padding: clamp(76px, 9vw, 128px) clamp(16px, 4vw, 32px);
@@ -370,7 +439,9 @@
       align-items: center;
     }
 
-    .final-photo { aspect-ratio: 1800 / 1052; }
+    .final-photo {
+      aspect-ratio: 1800 / 1052;
+    }
 
     .rsvp-panel {
       padding: clamp(72px, 9vw, 118px) clamp(16px, 4vw, 32px);
@@ -389,8 +460,17 @@
       box-shadow: 0 28px 80px rgba(0,0,0,.18);
     }
 
-    .rsvp-box h2 { margin-bottom: 18px; font-size: clamp(26px, 3.4vw, 44px); }
-    .rsvp-box p { max-width: 650px; margin: 0 auto 26px; color: rgba(255,253,247,.76); font-size: 18px; }
+    .rsvp-box h2 {
+      margin-bottom: 18px;
+      font-size: clamp(26px, 3.4vw, 44px);
+    }
+
+    .rsvp-box p {
+      max-width: 650px;
+      margin: 0 auto 26px;
+      color: rgba(255,253,247,.76);
+      font-size: 18px;
+    }
 
     .deadline {
       display: inline-flex;
@@ -427,7 +507,9 @@
       box-shadow: 0 16px 42px rgba(0,0,0,.22);
     }
 
-    .mobile-rsvp .button { width: 100%; }
+    .mobile-rsvp .button {
+      width: 100%;
+    }
 
     @media (max-width: 980px) {
       .split,
@@ -449,22 +531,65 @@
         text-align: center;
       }
 
-      .info-strip p:not(.label) { margin-inline: auto; }
-      .split.reverse .copy { order: -1; }
-      .final-photo-wrap .copy { order: -1; }
-      .card-grid { grid-template-columns: 1fr; }
+      .info-strip p:not(.label) {
+        margin-inline: auto;
+      }
+
+      .split.reverse .copy {
+        order: -1;
+      }
+
+      .final-photo-wrap .copy {
+        order: -1;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 680px) {
-      body { padding-bottom: 74px; }
-      .nav { min-height: 58px; }
-      .brand { font-size: 13px; letter-spacing: .09em; }
-      .nav-links a:not(.button), .nav-links .button { display: none; }
-      .hero { padding: 82px 12px 56px; }
-      .hero-inner { gap: 28px; }
-      .hero .label { font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
-      .names { font-size: clamp(38px, 12.2vw, 82px); line-height: 1.18; white-space: nowrap; }
-      .lead { font-size: 17px; }
+      body {
+        padding-bottom: 74px;
+      }
+
+      .nav {
+        min-height: 58px;
+      }
+
+      .brand {
+        font-size: 13px;
+        letter-spacing: .09em;
+      }
+
+      .nav-links a:not(.button),
+      .nav-links .button {
+        display: none;
+      }
+
+      .hero {
+        padding: 82px 12px 56px;
+      }
+
+      .hero-inner {
+        gap: 28px;
+      }
+
+      .hero .label {
+        font-size: 11px;
+        letter-spacing: .16em;
+        margin-bottom: 14px;
+      }
+
+      .names {
+        font-size: clamp(38px, 12.2vw, 82px);
+        line-height: 1.18;
+        white-space: nowrap;
+      }
+
+      .lead {
+        font-size: 17px;
+      }
 
       .hero-photo {
         display: grid;
@@ -494,28 +619,76 @@
         bottom: auto !important;
         width: 100% !important;
         max-width: none;
-        padding: 20px 22px 22px;
+        padding: 22px 22px 24px;
         border-radius: 0;
         background: var(--light);
         box-shadow: none;
         backdrop-filter: none;
       }
 
-      .hero-date-card strong { font-size: 24px; }
-      .hero-date-card span { font-size: 15px; }
-      .photo-card { border-radius: 22px; box-shadow: 0 18px 55px rgba(54,42,28,.14); }
-      .section, .final-photo-section { padding-block: 62px; }
-      .tall-photo { aspect-ratio: 1184 / 1800; }
-      .wide-photo { aspect-ratio: 1800 / 1175; }
-      .final-photo { aspect-ratio: 1800 / 1052; }
-      .walking-photo img { object-position: 50% 48%; }
-      .back-photo img { object-position: 50% 54%; }
-      .tree-photo img { object-position: 50% 38%; }
-      .info-strip .button { width: 100%; }
-      .detail { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; }
-      .card { min-height: 0; }
-      .rsvp-box { border-radius: 24px; }
-      .mobile-rsvp { display: block; }
+      .date-main {
+        font-size: 26px;
+      }
+
+      .date-sub {
+        font-size: 15px;
+      }
+
+      .photo-card {
+        border-radius: 22px;
+        box-shadow: 0 18px 55px rgba(54,42,28,.14);
+      }
+
+      .section,
+      .final-photo-section {
+        padding-block: 62px;
+      }
+
+      .tall-photo {
+        aspect-ratio: 1184 / 1800;
+      }
+
+      .wide-photo {
+        aspect-ratio: 1800 / 1175;
+      }
+
+      .final-photo {
+        aspect-ratio: 1800 / 1052;
+      }
+
+      .walking-photo img {
+        object-position: 50% 48%;
+      }
+
+      .back-photo img {
+        object-position: 50% 54%;
+      }
+
+      .tree-photo img {
+        object-position: 50% 38%;
+      }
+
+      .info-strip .button {
+        width: 100%;
+      }
+
+      .detail {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 22px 0;
+      }
+
+      .card {
+        min-height: 0;
+      }
+
+      .rsvp-box {
+        border-radius: 24px;
+      }
+
+      .mobile-rsvp {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -524,6 +697,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="#home" class="brand">Scarlett & David</a>
+
       <div class="nav-links">
         <a href="#details">Ablauf</a>
         <a href="#hinweise">Hinweise</a>
@@ -532,7 +706,9 @@
     </nav>
   </header>
 
-  <a class="mobile-rsvp" href="#rsvp"><span class="button">RSVP</span></a>
+  <a class="mobile-rsvp" href="#rsvp">
+    <span class="button">RSVP</span>
+  </a>
 
   <main id="home">
     <section class="hero" aria-label="Einladung">
@@ -545,6 +721,7 @@
             Am 11. September 2026 geben wir uns im Rathaus Möhringen das Ja-Wort.
             Wir freuen uns, wenn ihr diesen Tag mit uns teilt.
           </p>
+
           <div class="actions">
             <a class="button" href="#rsvp">Direkt zusagen</a>
             <a class="button secondary" href="#details">Ablauf ansehen</a>
@@ -553,25 +730,32 @@
 
         <figure class="photo-card hero-photo">
           <img src="assets/hug-close.webp" alt="Scarlett umarmt David im Grünen" />
+
           <figcaption class="hero-date-card">
-            <p class="label">Termin</p>
-            <strong>11. September 2026<br />11:00 Uhr</strong>
-            <span>Standesamtliche Trauung im Rathaus Möhringen in Tuttlingen.</span>
+            <div class="date-block">
+              <div class="date-main">11. September 2026</div>
+              <div class="date-main">11:00 Uhr</div>
+              <div class="date-sub">
+                Standesamtliche Trauung<br />
+                Rathaus Möhringen, Tuttlingen
+              </div>
+            </div>
           </figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="info-strip" aria-label="RSVP Hinweis">
+    <section class="info-strip" aria-label="Rückmeldung">
       <div class="info-strip-inner">
         <div>
-          <p class="label">Bitte nicht übersehen</p>
-          <h2>Gebt uns bitte kurz Rückmeldung.</h2>
+          <div class="script-small">Eine kurze Rückmeldung</div>
+          <h2>sagt uns bitte, ob ihr dabei seid.</h2>
           <p>
-            Damit wir den Tag gut planen können, sagt uns bitte kurz Bescheid,
-            ob ihr dabei seid.
+            Damit wir den Tag gut planen können, gebt uns bitte kurz Bescheid,
+            ob ihr kommt und mit wie vielen Personen.
           </p>
         </div>
+
         <a class="button light" href="#rsvp">RSVP öffnen</a>
       </div>
     </section>
@@ -581,12 +765,13 @@
         <figure class="photo-card tall-photo walking-photo">
           <img src="assets/walking.webp" alt="Scarlett und David gehen Hand in Hand über eine Wiese" />
         </figure>
+
         <div class="copy">
           <div class="script">Unser Standesamt</div>
           <h2>ein Tag mit den Menschen, die uns nah sind.</h2>
           <p>
-            Wir halten den Tag bewusst schlicht: erst die Trauung, danach ein gemeinsames
-            Anstoßen und am Abend ein ruhiger Ausklang.
+            Keine große Inszenierung, sondern ein Tag, der zu uns passt:
+            die Trauung im Rathaus, ein Glas Sekt im Park und später ein gemeinsamer Abend.
           </p>
         </div>
       </div>
@@ -595,10 +780,10 @@
     <section class="details-section" id="details">
       <div class="details">
         <div>
-          <p class="label">Ablauf</p>
+          <div class="script-small">Der Ablauf</div>
           <h2>Alles Wichtige auf einen Blick.</h2>
           <p class="details-intro">
-            Hier findet ihr den geplanten Ablauf für den Tag.
+            Drei Stationen, damit ihr wisst, wann wir wo gemeinsam sind.
           </p>
         </div>
 
@@ -619,7 +804,8 @@
             <div>
               <strong>Sektempfang</strong>
               <p>
-                Nach der Trauung stoßen wir gemeinsam im Park hinter dem Rathaus an.
+                Nach der Trauung gehen wir gemeinsam in den Park hinter dem Rathaus
+                und stoßen mit euch an.
               </p>
             </div>
           </article>
@@ -629,7 +815,7 @@
             <div>
               <strong>Gemeinsamer Ausklang</strong>
               <p>
-                Am Abend treffen wir uns in der Weinstube s&rsquo;Fensterle in Möhringen.
+                Abends treffen wir uns in der Weinstube s&rsquo;Fensterle in Möhringen.
               </p>
             </div>
           </article>
@@ -640,13 +826,14 @@
     <section class="section" aria-label="Sektempfang">
       <div class="split reverse">
         <div class="copy">
-          <p class="label">Nach der Trauung</p>
-          <h2>Gemeinsam anstoßen.</h2>
+          <div class="script-small">Nach der Trauung</div>
+          <h2>stoßen wir gemeinsam an.</h2>
           <p>
-            Direkt im Anschluss möchten wir mit euch im Park hinter dem Rathaus
-            auf diesen Moment anstoßen.
+            Gegen 11:30 Uhr gehen wir zusammen in den Park hinter dem Rathaus.
+            Dort möchten wir mit euch ein Glas Sekt trinken und kurz durchatmen.
           </p>
         </div>
+
         <figure class="photo-card wide-photo back-photo">
           <img src="assets/embrace-back.webp" alt="Scarlett und David stehen Arm in Arm auf einer Wiese" />
         </figure>
@@ -656,25 +843,26 @@
     <section class="cards" id="hinweise" aria-label="Hinweise">
       <div class="card-grid">
         <article class="card">
-          <h3>Ankunft</h3>
+          <div class="script-small">Ankommen</div>
+          <h3>11:00 Uhr im Rathaus</h3>
           <p>
             Die Trauung beginnt um 11:00 Uhr. Bitte plant ein paar Minuten Puffer ein.
           </p>
         </article>
 
         <article class="card">
-          <h3>Kleidung</h3>
+          <div class="script-small">Kleidung</div>
+          <h3>Festlich, aber entspannt</h3>
           <p>
-            Kommt festlich, aber so, dass ihr euch wohlfühlt. Es soll nicht steifer
-            werden als nötig.
+            Kommt so, dass ihr euch wohlfühlt. Es soll nicht steifer werden als nötig.
           </p>
         </article>
 
         <article class="card">
-          <h3>Rückmeldung</h3>
+          <div class="script-small">Antwort</div>
+          <h3>Kurze Rückmeldung reicht</h3>
           <p>
-            Bitte gebt uns kurz Bescheid, ob ihr dabei seid und mit wie vielen Personen
-            ihr kommt.
+            Bitte sagt uns, ob ihr dabei seid und mit wie vielen Personen ihr kommt.
           </p>
         </article>
       </div>
@@ -685,11 +873,13 @@
         <figure class="photo-card final-photo tree-photo">
           <img src="assets/tree-close.webp" alt="Scarlett und David sitzen zusammen an einem Baum" />
         </figure>
+
         <div class="copy">
-          <div class="script">Am Abend</div>
-          <h2>lassen wir den Tag gemeinsam ausklingen.</h2>
+          <div class="script-small">Später im s&rsquo;Fensterle</div>
+          <h2>gemeinsam essen, trinken und sitzen bleiben.</h2>
           <p>
             Ab 18:00 Uhr treffen wir uns in der Weinstube s&rsquo;Fensterle in Möhringen.
+            Ganz ohne Programm — einfach ein gemeinsamer Abend.
           </p>
         </div>
       </div>
@@ -699,10 +889,13 @@
       <div class="rsvp-box">
         <div class="script">Seid ihr dabei?</div>
         <h2>Wir freuen uns über eure Rückmeldung.</h2>
+
         <div class="deadline">Bitte bis 01.08.2026</div>
+
         <p>
           Schreibt uns kurz, ob ihr dabei seid und mit wie vielen Personen ihr kommt.
         </p>
+
         <a
           class="button light"
           href="mailto:david.klem@spreitzer.de?subject=RSVP%20Standesamt%20Scarlett%20%2B%20David&body=Hallo%20Scarlett%20und%20David%2C%0A%0Aich%2Fwir%20bin%2Fsind%20bei%20eurer%20standesamtlichen%20Trauung%20dabei.%0A%0AAnzahl%20Personen%3A%20%0A%0ALiebe%20Gr%C3%BC%C3%9Fe"
