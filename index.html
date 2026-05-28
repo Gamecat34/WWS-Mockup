@@ -442,14 +442,20 @@
       .hero-inner { gap: 28px; }
       .hero .label { font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
       .hero-label {
-        margin-bottom: 24px;
-        transform: translateY(-10px);
+        top: -14px;
+        margin-bottom: 42px;
       }
       .names {
         font-size: clamp(38px, 12.2vw, 82px);
         line-height: 1.18;
         white-space: nowrap;
-        margin-top: -2px;
+      }
+
+      @media (max-width: 420px) {
+        .hero-label {
+          top: -16px;
+          margin-bottom: 50px;
+        }
       }
       .lead { font-size: 17px; }
 
