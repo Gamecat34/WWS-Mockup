@@ -442,19 +442,26 @@
       .hero-inner { gap: 28px; }
       .hero .label { font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
       .hero-label {
-        top: -14px;
-        margin-bottom: 42px;
+        top: -18px;
+        margin-bottom: 56px;
       }
       .names {
-        font-size: clamp(38px, 12.2vw, 82px);
-        line-height: 1.18;
+        width: calc(100vw - 24px);
+        max-width: none;
+        font-size: clamp(58px, 17vw, 96px);
+        line-height: 1.06;
         white-space: nowrap;
+        letter-spacing: 0;
       }
 
       @media (max-width: 420px) {
         .hero-label {
-          top: -16px;
-          margin-bottom: 50px;
+          top: -20px;
+          margin-bottom: 62px;
+        }
+
+        .names {
+          font-size: clamp(56px, 18.2vw, 82px);
         }
       }
       .lead { font-size: 17px; }
