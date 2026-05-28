@@ -162,6 +162,11 @@
       color: rgba(31,27,22,.68);
     }
 
+    .hero-label {
+      position: relative;
+      z-index: 2;
+    }
+
     .names {
       font-family: var(--script);
       font-size: clamp(46px, 11.2vw, 138px);
@@ -436,7 +441,16 @@
       .hero { padding: 82px 12px 56px; }
       .hero-inner { gap: 28px; }
       .hero .label { font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
-      .names { font-size: clamp(38px, 12.2vw, 82px); line-height: 1.18; white-space: nowrap; }
+      .hero-label {
+        margin-bottom: 24px;
+        transform: translateY(-10px);
+      }
+      .names {
+        font-size: clamp(38px, 12.2vw, 82px);
+        line-height: 1.18;
+        white-space: nowrap;
+        margin-top: -2px;
+      }
       .lead { font-size: 17px; }
 
       /* Mobile must not overlay the date card. The image and the text box are two real rows. */
@@ -509,7 +523,7 @@
     <section class="hero" aria-label="Einladung">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="label">Standesamtliche Trauung</p>
+          <p class="label hero-label">Standesamtliche Trauung</p>
           <h1 class="names">Scarlett + David</h1>
           <h2>Wir sagen Ja.</h2>
           <p class="lead">Wir freuen uns, wenn ihr diesen Moment mit uns teilt. Hier findet ihr die wichtigsten Informationen zur standesamtlichen Trauung und könnt uns direkt Bescheid geben, ob ihr dabei seid.</p>
